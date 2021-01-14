@@ -42,7 +42,7 @@ class PredictionsSaverCallback(Callback):
         Returns:
             str: A length encoded version of the passed prediction
         """
-        mask = cv2.resize(prediction, self.origin_img_size)
+        mask = cv2.resize(prediction, self.origin_img_size) # 输出[388, 388]resize回原来的大小[1918, 1200]
         mask = mask > self.threshold
         return self.run_length_encode(mask)
 

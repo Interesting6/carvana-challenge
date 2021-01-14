@@ -33,6 +33,7 @@ def main():
     threshold = 0.5
     validation_size = 0.2
     sample_size = 0.05 # None  # Put 'None'为选择全部数据，否者0-1之间为随机抽取部分数据
+    now_time = helpers.get_model_timestamp()
 
     # -- Optional parameters 一些有用的参数和callback回调函数
     threads = 0 #cpu_count()
@@ -41,7 +42,7 @@ def main():
     # Training callbacks
     tb_viz_cb = TensorboardVisualizerCallback(os.path.join(script_dir, '../logs2/tb_viz'))
     tb_logs_cb = TensorboardLoggerCallback(os.path.join(script_dir, '../logs2/tb_logs'))
-    model_saver_cb = ModelSaverCallback(os.path.join(script_dir, '../output2/models/model_' + helpers.get_model_timestamp()), verbose=True)
+    model_saver_cb = ModelSaverCallback(os.path.join(script_dir, f'../output2/models/model_{now_time}'), verbose=True)
 
     # Download the datasets
     ds_fetcher = DatasetFetcher()

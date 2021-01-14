@@ -1,10 +1,10 @@
 # Carvana challenge
 
-This repository holds the code for the [carnava image making challenge](https://www.kaggle.com/c/carvana-image-masking-challenge). It's meant to show how to construct Unets with Pytorch in a concise and straightforward way.
+This repository holds the code for the [carnava image making challenge](https://www.kaggle.com/c/carvana-image-masking-challenge). It's meant to show how to construct original paper-version Unets with Pytorch in a concise and straightforward way.
 
 # Dependencies
 
- - Pytorch 0.2.0
+ - Pytorch 1.7.0
  - Sklearn
  - Numpy
  - [OpenCV-Python](https://pypi.python.org/pypi/opencv-python)

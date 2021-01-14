@@ -123,7 +123,7 @@ class ModelSaverCallback(Callback):
         """
             Callback intended to be executed each time a whole train pass
             get finished. This callback saves the model in the given path
-            回调函数在每次完成整改训练时执行，此回调将模型保存在给定路径
+            回调函数在每次完成整个训练时执行保存模型权重，在每个epoch完成时更新要保存的权重信息
         Args:
             verbose (bool): True or False to make the callback verbose
             path_to_model (str): The path where to store the model
@@ -181,10 +181,10 @@ class ModelSaverCallback(Callback):
             self.best_loss_weight = copy.deepcopy(kwargs['net'].state_dict())
             self.best_loss = kwargs["val_loss"]
             self.best_loss_epoch = epoch_id
-            self.loss_suffix = f"best_loss_epoch_{epoch_id}.pt"
+            self.loss_suffix = f"bLoss_epoch_{epoch_id}.pt"
         if kwargs["val_dice_coeff"] > self.best_acc:
             self.best_acc_weight = copy.deepcopy(kwargs['net'].state_dict())
             self.best_acc = kwargs["val_dice_coeff"]
             self.best_acc_epoch = epoch_id
-            self.acc_suffix = f"best_acc_epoch_{epoch_id}.pt"
+            self.acc_suffix = f"bAcc_epoch_{epoch_id}.pt"
     
